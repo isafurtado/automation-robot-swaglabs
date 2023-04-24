@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230424 00:40:11.357" rpa="false" schemaversion="3">
+<suite id="s1" name="TesteMenuLateral" source="C:\automacao\robot_swaglabs\TesteMenuLateral.robot">
+<test id="s1-t1" name="Caso de Teste 01: Acessar Menu Lateral" line="5">
+<kw name="Acessar página Swag Labs" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 00:40:11.970" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230424 00:40:11.968" endtime="20230424 00:40:15.641"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=login_button_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:15.641" endtime="20230424 00:40:15.721"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:11.968" endtime="20230424 00:40:15.721"/>
+</kw>
+<kw name="Logar na aplicação" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:15.724" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230424 00:40:15.722" endtime="20230424 00:40:16.028"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:16.030" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.028" endtime="20230424 00:40:16.294"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:16.297" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.295" endtime="20230424 00:40:16.525"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:16.621" level="INFO">Current page contains element 'id=inventory_container'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.526" endtime="20230424 00:40:16.621"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:15.722" endtime="20230424 00:40:16.622"/>
+</kw>
+<kw name="Clicar no Menu Lateral" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:16.623" endtime="20230424 00:40:16.737"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:16.738" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.737" endtime="20230424 00:40:16.810"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class=bm-menu-wrap</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:16.839" level="INFO">Current page contains element 'class=bm-menu-wrap'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.811" endtime="20230424 00:40:16.839"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:16.622" endtime="20230424 00:40:16.839"/>
+</kw>
+<kw name="Validar lista do Menu" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=inventory_sidebar_link</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:16.841" endtime="20230424 00:40:16.928"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>id=inventory_sidebar_link</arg>
+<arg>All Items</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230424 00:40:16.933" level="INFO">Verifying element 'id=inventory_sidebar_link' contains exact text 'All Items'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.928" endtime="20230424 00:40:16.988"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>id=about_sidebar_link</arg>
+<arg>About</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230424 00:40:16.990" level="INFO">Verifying element 'id=about_sidebar_link' contains exact text 'About'.</msg>
+<status status="PASS" starttime="20230424 00:40:16.989" endtime="20230424 00:40:17.075"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>id=logout_sidebar_link</arg>
+<arg>Logout</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230424 00:40:17.081" level="INFO">Verifying element 'id=logout_sidebar_link' contains exact text 'Logout'.</msg>
+<status status="PASS" starttime="20230424 00:40:17.076" endtime="20230424 00:40:17.126"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>id=reset_sidebar_link</arg>
+<arg>Reset App State</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230424 00:40:17.127" level="INFO">Verifying element 'id=reset_sidebar_link' contains exact text 'Reset App State'.</msg>
+<status status="PASS" starttime="20230424 00:40:17.126" endtime="20230424 00:40:17.172"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:16.840" endtime="20230424 00:40:17.173"/>
+</kw>
+<kw name="Fechar Browser" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 00:40:17.174" endtime="20230424 00:40:19.667"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:17.173" endtime="20230424 00:40:19.668"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:11.965" endtime="20230424 00:40:19.670"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Fechar Menu Lateral" line="13">
+<kw name="Acessar página Swag Labs" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 00:40:19.684" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230424 00:40:19.678" endtime="20230424 00:40:23.483"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=login_button_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:23.483" endtime="20230424 00:40:23.578"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:19.676" endtime="20230424 00:40:23.579"/>
+</kw>
+<kw name="Logar na aplicação" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:23.583" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230424 00:40:23.580" endtime="20230424 00:40:24.040"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:24.041" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230424 00:40:24.041" endtime="20230424 00:40:24.283"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:24.285" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230424 00:40:24.284" endtime="20230424 00:40:24.559"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:24.611" level="INFO">Current page contains element 'id=inventory_container'.</msg>
+<status status="PASS" starttime="20230424 00:40:24.559" endtime="20230424 00:40:24.611"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:23.580" endtime="20230424 00:40:24.611"/>
+</kw>
+<kw name="Clicar no Menu Lateral" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:24.616" endtime="20230424 00:40:24.783"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:24.785" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230424 00:40:24.784" endtime="20230424 00:40:24.871"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class=bm-menu-wrap</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:24.908" level="INFO">Current page contains element 'class=bm-menu-wrap'.</msg>
+<status status="PASS" starttime="20230424 00:40:24.872" endtime="20230424 00:40:24.909"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:24.614" endtime="20230424 00:40:24.909"/>
+</kw>
+<kw name="Clicar no botão X do Menu Lateral" library="Resource">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 00:40:25.914" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 00:40:24.911" endtime="20230424 00:40:25.914"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=react-burger-cross-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:25.915" endtime="20230424 00:40:25.961"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=react-burger-cross-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:25.962" level="INFO">Clicking element 'id=react-burger-cross-btn'.</msg>
+<status status="PASS" starttime="20230424 00:40:25.961" endtime="20230424 00:40:26.026"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 00:40:28.026" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 00:40:26.026" endtime="20230424 00:40:28.026"/>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>id=inventory_sidebar_link</arg>
+<arg>tabindex</arg>
+<arg>-1</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20230424 00:40:28.063" level="INFO">Element 'id=inventory_sidebar_link' attribute 'tabindex' contains value '-1'.</msg>
+<status status="PASS" starttime="20230424 00:40:28.026" endtime="20230424 00:40:28.063"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:24.911" endtime="20230424 00:40:28.064"/>
+</kw>
+<kw name="Fechar Browser" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 00:40:28.065" endtime="20230424 00:40:30.570"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:28.064" endtime="20230424 00:40:30.570"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:19.674" endtime="20230424 00:40:30.571"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 03: Funcionalidade Logout" line="20">
+<kw name="Acessar página Swag Labs" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 00:40:30.576" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230424 00:40:30.575" endtime="20230424 00:40:34.584"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=login_button_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:34.584" endtime="20230424 00:40:34.703"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:30.575" endtime="20230424 00:40:34.703"/>
+</kw>
+<kw name="Logar na aplicação" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:34.713" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230424 00:40:34.712" endtime="20230424 00:40:35.149"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:35.150" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230424 00:40:35.149" endtime="20230424 00:40:35.369"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:35.370" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230424 00:40:35.369" endtime="20230424 00:40:35.818"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:36.033" level="INFO">Current page contains element 'id=inventory_container'.</msg>
+<status status="PASS" starttime="20230424 00:40:35.819" endtime="20230424 00:40:36.033"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:34.711" endtime="20230424 00:40:36.033"/>
+</kw>
+<kw name="Clicar no Menu Lateral" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:36.047" endtime="20230424 00:40:36.151"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:36.151" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230424 00:40:36.151" endtime="20230424 00:40:36.245"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class=bm-menu-wrap</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:36.297" level="INFO">Current page contains element 'class=bm-menu-wrap'.</msg>
+<status status="PASS" starttime="20230424 00:40:36.246" endtime="20230424 00:40:36.297"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:36.047" endtime="20230424 00:40:36.298"/>
+</kw>
+<kw name="Clicar em Logout" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:36.300" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<status status="PASS" starttime="20230424 00:40:36.299" endtime="20230424 00:40:36.551"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20230424 00:40:36.575" level="INFO">${current_url} = https://www.saucedemo.com/</msg>
+<status status="PASS" starttime="20230424 00:40:36.552" endtime="20230424 00:40:36.575"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${URL}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230424 00:40:36.575" endtime="20230424 00:40:36.576"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:36.298" endtime="20230424 00:40:36.577"/>
+</kw>
+<kw name="Fechar Browser" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 00:40:36.578" endtime="20230424 00:40:38.964"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:36.578" endtime="20230424 00:40:38.965"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:30.574" endtime="20230424 00:40:38.967"/>
+</test>
+<test id="s1-t4" name="Caso de Teste 04: Funcionalidade About" line="27">
+<kw name="Acessar página Swag Labs" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 00:40:38.980" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20230424 00:40:38.977" endtime="20230424 00:40:42.855"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=login_button_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:42.856" endtime="20230424 00:40:42.952"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:38.975" endtime="20230424 00:40:42.953"/>
+</kw>
+<kw name="Logar na aplicação" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=user-name</arg>
+<arg>${LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:42.955" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20230424 00:40:42.954" endtime="20230424 00:40:43.339"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:43.340" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20230424 00:40:43.339" endtime="20230424 00:40:43.634"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:43.635" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20230424 00:40:43.634" endtime="20230424 00:40:43.967"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:44.052" level="INFO">Current page contains element 'id=inventory_container'.</msg>
+<status status="PASS" starttime="20230424 00:40:43.968" endtime="20230424 00:40:44.052"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:42.954" endtime="20230424 00:40:44.053"/>
+</kw>
+<kw name="Clicar no Menu Lateral" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 00:40:44.054" endtime="20230424 00:40:44.231"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:44.235" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<status status="PASS" starttime="20230424 00:40:44.232" endtime="20230424 00:40:44.332"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class=bm-menu-wrap</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230424 00:40:44.370" level="INFO">Current page contains element 'class=bm-menu-wrap'.</msg>
+<status status="PASS" starttime="20230424 00:40:44.332" endtime="20230424 00:40:44.370"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:44.053" endtime="20230424 00:40:44.371"/>
+</kw>
+<kw name="Clicar em About" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=about_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 00:40:44.374" level="INFO">Clicking element 'id=about_sidebar_link'.</msg>
+<status status="PASS" starttime="20230424 00:40:44.372" endtime="20230424 00:41:07.233"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20230424 00:41:07.247" level="INFO">${current_url} = https://saucelabs.com/</msg>
+<status status="PASS" starttime="20230424 00:41:07.233" endtime="20230424 00:41:07.247"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${current_url}</arg>
+<arg>https://saucelabs.com/</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230424 00:41:07.248" endtime="20230424 00:41:07.248"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:44.372" endtime="20230424 00:41:07.248"/>
+</kw>
+<kw name="Fechar Browser" library="Resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 00:41:07.250" endtime="20230424 00:41:09.878"/>
+</kw>
+<status status="PASS" starttime="20230424 00:41:07.249" endtime="20230424 00:41:09.879"/>
+</kw>
+<status status="PASS" starttime="20230424 00:40:38.971" endtime="20230424 00:41:09.880"/>
+</test>
+<status status="PASS" starttime="20230424 00:40:11.365" endtime="20230424 00:41:09.887"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="TesteMenuLateral">TesteMenuLateral</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
